@@ -35,10 +35,10 @@ function App() {
   const [counterClick, setCounterClick] = useState(1);
 
   useEffect(() => {
-    fetch("https://dummyjson.com/posts/1")
+    fetch("https://dummyjson.com/posts/" + counterClick)
       .then((data) => data.json())
       .then((result) => setArticle(result));
-  }, []);
+  }, [counterClick]);
 
   const nextArticle = () => {
     setCounterClick(counterClick + 1);
