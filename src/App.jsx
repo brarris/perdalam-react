@@ -32,6 +32,7 @@ function Article(props) {
 
 function App() {
   const [article, setArticle] = useState("");
+  const [counterClick, setCounterClick] = useState(1);
 
   useEffect(() => {
     fetch("https://dummyjson.com/posts/1")
@@ -39,7 +40,9 @@ function App() {
       .then((result) => setArticle(result));
   }, []);
 
-  console.log(article);
+  const nextArticle = () => {
+    setCounterClick(counterClick + 1);
+  };
 
   return (
     <main>
@@ -49,6 +52,8 @@ function App() {
       />
       <Article title="Artikel Pertama" description="ini adalah deskripsi 1" />
       <Article title={article.title} description={article.body} />
+      {counterClick}
+      <button onClick={nextArticle}>Next Article</button>
     </main>
   );
 }
