@@ -44,10 +44,6 @@ function App() {
     setCounterClick(counterClick + 1);
   };
 
-  const previousArticle = () => {
-    setCounterClick(counterClick - 1);
-  };
-
   return (
     <main>
       <WebTitle
@@ -56,7 +52,6 @@ function App() {
       />
       <Article title="Artikel Pertama" description="ini adalah deskripsi 1" />
       <Article title={article.title} description={article.body} />
-      <button onClick={previousArticle}>Previous Article</button>
       {counterClick}
       <button onClick={nextArticle}>Next Article</button>
     </main>
