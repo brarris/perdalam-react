@@ -30,6 +30,15 @@ function Article(props) {
   );
 }
 
+const LimitArticle = () => {
+  return (
+    <div>
+      <h3>Mohon maaf anda telah mencapai limit!</h3>
+      <p>Anda sudah memasuki batas akhir untuk melihat artikel</p>
+    </div>
+  );
+};
+
 function App() {
   const [article, setArticle] = useState("");
   const [counterClick, setCounterClick] = useState(1);
@@ -47,6 +56,8 @@ function App() {
   const previousArticle = () => {
     setCounterClick(counterClick - 1);
   };
+
+  if (counterClick > 4) return <LimitArticle />;
 
   return (
     <main>
