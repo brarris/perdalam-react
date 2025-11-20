@@ -65,6 +65,7 @@ function App() {
       />
       <Article title="Artikel Pertama" description="ini adalah deskripsi 1" />
       <Article title={article.title} description={article.body} />
+      {counterClick === 2 && <p>Tombol next article telah di click 2x</p>}
       {counterClick > 4 ? (
         <LimitArticle />
       ) : (
