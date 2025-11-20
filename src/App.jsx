@@ -1,44 +1,9 @@
 import { useState, useEffect } from "react";
 import { getArticle } from "./utils/getArticle";
+import Article from "./components/Article";
+import LimitArticle from "./components/LimitArticle";
+import WebTitle from "./components/WebTitle";
 import "./App.css";
-
-function WebTitle(props) {
-  const [title, setTitle] = useState(props.title);
-
-  const changeTitle = () => {
-    setTitle("John Doe Website");
-  };
-
-  return (
-    <div>
-      <h1>{title}</h1>
-      <p>{props.description}</p>
-      <button onClick={changeTitle}>
-        click aku untuk mengubah judul website
-      </button>
-    </div>
-  );
-}
-
-function Article(props) {
-  const title = props.title;
-  const description = props.description;
-  return (
-    <article>
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </article>
-  );
-}
-
-const LimitArticle = () => {
-  return (
-    <div>
-      <h3>Mohon maaf anda telah mencapai limit!</h3>
-      <p>Anda sudah memasuki batas akhir untuk melihat artikel</p>
-    </div>
-  );
-};
 
 function App() {
   const [article, setArticle] = useState("");
