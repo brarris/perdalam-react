@@ -3,6 +3,7 @@ import { getArticle } from "./utils/getArticle";
 import Article from "./components/Article";
 import LimitArticle from "./components/LimitArticle";
 import WebTitle from "./components/WebTitle";
+import Layout from "./components/Layout";
 import "./App.css";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
   };
 
   return (
-    <main>
+    <Layout>
       <WebTitle
         title="Netflix Clone"
         description="ini deskripsi website netflix cloning"
@@ -39,7 +40,7 @@ function App() {
           <button onClick={nextArticle}>Next Article</button>
         </div>
       )}
-    </main>
+    </Layout>
   );
 }
 
